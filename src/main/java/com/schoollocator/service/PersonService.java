@@ -1,9 +1,9 @@
-package com.example.service;
+package com.schoollocator.service;
 
 
 import java.util.List;
 
-import com.example.model.Person;
+import com.schoollocator.model.Person;
 
 public interface PersonService {
     

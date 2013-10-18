@@ -1,4 +1,4 @@
-package com.example.model;
+package com.schoollocator.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

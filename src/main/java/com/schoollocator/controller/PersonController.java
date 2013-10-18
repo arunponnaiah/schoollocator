@@ -1,4 +1,4 @@
-package com.example.controller;
+package com.schoollocator.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.example.model.Person;
-import com.example.service.PersonService;
+import com.schoollocator.model.Person;
+import com.schoollocator.service.PersonService;
 
 import java.util.Map;
 
