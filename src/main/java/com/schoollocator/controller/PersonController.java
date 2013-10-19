@@ -20,6 +20,12 @@ public class PersonController {
     private PersonService personService;
 
     @RequestMapping("/")
+    public String home() {
+        return "home";
+    }
+
+    
+    @RequestMapping("/people")
     public String listPeople(Map<String, Object> map) {
 
         map.put("person", new Person());
