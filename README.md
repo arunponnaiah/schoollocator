@@ -1,6 +1,6 @@
-# Spring MVC and Hibernate template application 
+# Schoollocator
 
-This is a template for a web application that uses Spring MVC and Hibernate. The sample code is a simple CRUD page that manipulates records for a single model object.
+A web application that uses google places API to search schools. 
 
 ## Running the application locally
 
