@@ -1,16 +1,9 @@
 package com.schoollocator.service;
 
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-
-import com.schoollocator.model.Person;
-
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.persistence.criteria.CriteriaQuery;
-import javax.persistence.criteria.Root;
 
-import java.util.List;
+import org.springframework.stereotype.Service;
 
 @Service
 public class PersonServiceImpl implements PersonService {
@@ -18,7 +11,7 @@ public class PersonServiceImpl implements PersonService {
     @PersistenceContext
     EntityManager em;
         
-    @Transactional
+/*    @Transactional
     public void addPerson(Person person) {
         em.persist(person);
     }
@@ -36,6 +29,6 @@ public class PersonServiceImpl implements PersonService {
         if (null != person) {
             em.remove(person);
         }
-    }
+    }*/
     
 }
