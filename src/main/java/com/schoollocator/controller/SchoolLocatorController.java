@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.schoollocator.service.PersonService;
 
 @Controller
-public class PersonController {
+public class SchoolLocatorController {
 
     @Autowired
     private PersonService personService;
