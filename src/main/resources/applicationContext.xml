@@ -69,6 +69,12 @@
                 </props>
             </property>
         </bean>
+        
+        <bean id="googleGeocodeServiceClient" class="com.schoollocator.dao.GoogleGeocodeServiceClient">
+        	<property name="gson" ref="gson"></property>
+        </bean>
+        <bean id="gson" class="com.google.gson.Gson"/>
+        	
     </beans>
 
 </beans>

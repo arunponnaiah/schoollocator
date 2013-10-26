@@ -2,7 +2,7 @@ package com.schoollocator.model;
 
 import java.util.List;
 
-public class NearBySchoolsResponse {
+public class GooglePlacesNearBySchoolsServiceResponse {
 	private String status;
 	private List<School> schools;
 	public String getStatus() {
