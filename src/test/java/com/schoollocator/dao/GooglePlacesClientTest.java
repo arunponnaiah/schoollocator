@@ -1,7 +1,8 @@
 package com.schoollocator.dao;
 
 
-import junit.framework.TestCase;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 import org.junit.After;
 import org.junit.Before;
@@ -9,7 +10,7 @@ import org.junit.Test;
 
 import com.schoollocator.model.NearBySchoolsResponse;
 
-public class GooglePlacesClientTest extends TestCase{
+public class GooglePlacesClientTest{
 	private WebClient webClient;
 	private String location;
 	private int zipCode;
