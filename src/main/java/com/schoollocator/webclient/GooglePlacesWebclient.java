@@ -35,7 +35,6 @@ public class GooglePlacesWebclient {
 			school.setName(result.getName());
 			schools.add(school);
 		}
-		System.out.println(schools.toString());
 		return schools;
 		
 	}

@@ -1,6 +1,5 @@
 package com.schoollocator.controller;
 
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -20,28 +19,31 @@ public class SchoolLocatorController {
     }
 
     @RequestMapping("/nearBySearch")
-    public String nearBySearch(String keyword,int radius,int zipCode){
+    public String nearBySearch(String keyword,int radius,int zipcode,Map<String, Object> map) {
     	GoogleGeocodeWebclient googleGeocodeWebclient = new GoogleGeocodeWebclient();
     	String location;
 		try {
-			location = googleGeocodeWebclient.getPlaceLocation(zipCode);
+			location = googleGeocodeWebclient.getPlaceLocation(zipcode);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 			return "error";
 		}
     	GooglePlacesWebclient googlePlacesWebclient = new GooglePlacesWebclient();
-    	List<School> nearBySchools=null;
+    	List<School> schools=null;
 		try {
-			nearBySchools = googlePlacesWebclient.nearBySearch(keyword, location, radius);
+			schools = googlePlacesWebclient.nearBySearch(keyword, location, radius);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 			return "error";
 		}
-    	Map<String, List<School>> map = new HashMap<String, List<School>>();
-    	map.put("nearBySchools",nearBySchools);
-    	return "nearBySchoolResult";
+		System.out.println(" No of schools : "+schools.size());
+		System.out.println("############## SCHOOLS #################");
+		for(School school:schools){
+			System.out.println(school.getName());
+		}
+		
+    	map.put("schools",schools);
+    	return "nearBySchools";
     }
     
     /*

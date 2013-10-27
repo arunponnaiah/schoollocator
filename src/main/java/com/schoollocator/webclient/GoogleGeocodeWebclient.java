@@ -17,8 +17,8 @@ public class GoogleGeocodeWebclient {
 		this.gson = new Gson();
 	}
 	
-	public String getPlaceLocation(int zipCode) throws Exception {
-		String geocodeUrl = "http://maps.googleapis.com/maps/api/geocode/json?address=11753&sensor=false";
+	public String getPlaceLocation(int zipcode) throws Exception {
+		String geocodeUrl = "http://maps.googleapis.com/maps/api/geocode/json?address="+zipcode+"&sensor=false";
 		URL google = new URL(geocodeUrl);
 		HttpURLConnection connection = (HttpURLConnection) google.openConnection();
 		connection.setDoOutput(true);
