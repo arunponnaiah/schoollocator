@@ -20,11 +20,25 @@ public class SchoolLocatorController {
     }
 
     @RequestMapping("/nearBySearch")
-    public String nearBySearch(String keyword,int radius,int zipCode) throws Exception{
+    public String nearBySearch(String keyword,int radius,int zipCode){
     	GoogleGeocodeWebclient googleGeocodeWebclient = new GoogleGeocodeWebclient();
-    	String location = googleGeocodeWebclient.getPlaceLocation(zipCode);
+    	String location;
+		try {
+			location = googleGeocodeWebclient.getPlaceLocation(zipCode);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return "error";
+		}
     	GooglePlacesWebclient googlePlacesWebclient = new GooglePlacesWebclient();
-    	List<School> nearBySchools = googlePlacesWebclient.nearBySearch(keyword, location, radius);
+    	List<School> nearBySchools=null;
+		try {
+			nearBySchools = googlePlacesWebclient.nearBySearch(keyword, location, radius);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return "error";
+		}
     	Map<String, List<School>> map = new HashMap<String, List<School>>();
     	map.put("nearBySchools",nearBySchools);
     	return "nearBySchoolResult";
