@@ -1,10 +1,7 @@
 package com.schoollocator.model;
 
-/**
- * @author Jaianu
- *
- */
-public class School {
+
+public class GooglePlaceNearBySearchResults {
 	private String name;
 
 	public String getName() {
@@ -14,12 +11,6 @@ public class School {
 	public void setName(String name) {
 		this.name = name;
 	}
-
-	@Override
-	public String toString() {
-		return "School [name=" + name + "]";
-	}
-	
 	
 	
 }

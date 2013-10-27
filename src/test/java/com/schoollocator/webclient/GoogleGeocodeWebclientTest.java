@@ -7,15 +7,15 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.schoollocator.webclient.GoogleGeocodeServiceClient;
+import com.schoollocator.webclient.GoogleGeocodeWebclient;
 
-public class GoogleGeocodeClientTest{
-	private GoogleGeocodeServiceClient googleGeocodeServiceClient;
+public class GoogleGeocodeWebclientTest{
+	private GoogleGeocodeWebclient googleGeocodeWebclient;
 	private int zipCode;
 	
 	@Before
 	public void setUp() throws Exception {
-		this.googleGeocodeServiceClient = new GoogleGeocodeServiceClient();
+		this.googleGeocodeWebclient = new GoogleGeocodeWebclient();
 		this.zipCode=11753;
 	}
 
@@ -25,7 +25,7 @@ public class GoogleGeocodeClientTest{
 	
 	@Test
 	public void testGetPlaceLocation() throws Exception{
-		String location= this.googleGeocodeServiceClient.getPlaceLocation(zipCode);
+		String location= this.googleGeocodeWebclient.getPlaceLocation(zipCode);
 		assertNotNull(location);
 	}
 	

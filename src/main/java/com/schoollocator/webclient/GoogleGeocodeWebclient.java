@@ -9,11 +9,11 @@ import com.google.gson.Gson;
 import com.schoollocator.model.GoogleGeocodeResponse;
 import com.schoollocator.model.Location;
 
-public class GoogleGeocodeServiceClient {
+public class GoogleGeocodeWebclient {
 
 	private Gson gson;
 	
-	public GoogleGeocodeServiceClient() {
+	public GoogleGeocodeWebclient() {
 		this.gson = new Gson();
 	}
 	

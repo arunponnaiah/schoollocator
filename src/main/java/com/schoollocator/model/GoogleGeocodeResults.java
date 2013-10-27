@@ -1,7 +1,7 @@
 package com.schoollocator.model;
 
 
-public class Results {
+public class GoogleGeocodeResults {
     private Geometry geometry;
 
 	public Geometry getGeometry() {
@@ -14,7 +14,7 @@ public class Results {
 
 	@Override
 	public String toString() {
-		return "Results [geometry=" + geometry + "]";
+		return "GoogleGeocodeResults [geometry=" + geometry + "]";
 	}
     
 }
