@@ -21,4 +21,4 @@
 	<body onload="init()">
 		<div id="map"></div>
 	</body>
-</hs istml>
+</html>
