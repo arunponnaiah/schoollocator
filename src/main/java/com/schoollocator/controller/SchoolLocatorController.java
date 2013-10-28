@@ -13,12 +13,12 @@ import com.schoollocator.webclient.GooglePlacesWebclient;
 @Controller
 public class SchoolLocatorController {
 
-    @RequestMapping("/home")
-    public String home() {
-        return "home";
-    }
-
-    @RequestMapping("/nearBySearch")
+	@RequestMapping("/home")
+	public String home(){
+		return "home";
+	}
+	
+    @RequestMapping("/searchSchool")
     public String nearBySearch(String keyword,int radius,int zipcode,Map<String, Object> map) {
     	GoogleGeocodeWebclient googleGeocodeWebclient = new GoogleGeocodeWebclient();
     	String location;
@@ -43,7 +43,7 @@ public class SchoolLocatorController {
 		}
 		
     	map.put("schools",schools);
-    	return "nearBySchools";
+    	return "home";
     }
     
     /*

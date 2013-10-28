@@ -20,7 +20,9 @@ public class GooglePlacesWebclient {
 	}
 	
 	public List<School> nearBySearch(String keyword,String location, int radius) throws Exception{
-		String geocodeUrl = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?keyword="+keyword+"&type=school&&radius="+radius+"&sensor=false&location="+location+"&key=AIzaSyCPQaOZZ6HRn9z77l5u58VtuaV-Uzcjd-c";
+		double radiusInMeters = (radius * 1609.3);
+		keyword = keyword.replace(" ", "");
+		String geocodeUrl = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?keyword="+keyword+"&type=school&&radius="+radiusInMeters+"&sensor=false&location="+location+"&key=AIzaSyCPQaOZZ6HRn9z77l5u58VtuaV-Uzcjd-c";
 		URL google = new URL(geocodeUrl);
 		HttpURLConnection connection = (HttpURLConnection) google.openConnection();
 		connection.setDoOutput(true);
