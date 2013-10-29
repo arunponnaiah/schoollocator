@@ -45,7 +45,7 @@
 	            		</td>
 	            		<td>miles</td>
 	            		<td>
-	            			<select name="radius">
+	            			<select name="miles">
 	            				<option>5</option>
 	            				<option>10</option>
 	            				<option>15</option>

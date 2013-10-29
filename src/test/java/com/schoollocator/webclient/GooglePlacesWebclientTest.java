@@ -15,14 +15,14 @@ public class GooglePlacesWebclientTest {
 	private GooglePlacesWebclient googlePlacesWebclient;
 	private String keyword;
 	private String location;
-	private int radius;
+	private int miles;
 	
 	@Before
 	public void setUp() throws Exception {
 		this.googlePlacesWebclient = new GooglePlacesWebclient();
 		this.keyword="school";
 		this.location="40.78530840000001,-73.54174399999999";
-		this.radius=5000;
+		this.miles=5;
 	}
 
 	@After
@@ -31,7 +31,7 @@ public class GooglePlacesWebclientTest {
 
 	@Test
 	public void testNearBySearch() throws Exception {
-		List<School> schools = this.googlePlacesWebclient.nearBySearch(keyword, location, radius);
+		List<School> schools = this.googlePlacesWebclient.nearBySearch(keyword, location, miles);
 		assertNotNull(schools);
 	}
 

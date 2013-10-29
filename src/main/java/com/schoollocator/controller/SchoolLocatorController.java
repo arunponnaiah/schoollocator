@@ -19,7 +19,7 @@ public class SchoolLocatorController {
 	}
 	
     @RequestMapping("/searchSchool")
-    public String nearBySearch(String keyword,int radius,int zipcode,Map<String, Object> map) {
+    public String nearBySearch(String keyword,int miles,int zipcode,Map<String, Object> map) {
     	GoogleGeocodeWebclient googleGeocodeWebclient = new GoogleGeocodeWebclient();
     	String location;
 		try {
@@ -31,7 +31,7 @@ public class SchoolLocatorController {
     	GooglePlacesWebclient googlePlacesWebclient = new GooglePlacesWebclient();
     	List<School> schools=null;
 		try {
-			schools = googlePlacesWebclient.nearBySearch(keyword, location, radius);
+			schools = googlePlacesWebclient.nearBySearch(keyword, location, miles);
 		} catch (Exception e) {
 			e.printStackTrace();
 			return "error";
