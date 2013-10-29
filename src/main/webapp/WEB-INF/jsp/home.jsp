@@ -43,7 +43,7 @@
 	            				<option>high school</option>
 	            			</select>
 	            		</td>
-	            		<td>radius</td>
+	            		<td>miles</td>
 	            		<td>
 	            			<select name="radius">
 	            				<option>5</option>
