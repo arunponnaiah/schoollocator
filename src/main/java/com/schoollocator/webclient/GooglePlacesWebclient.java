@@ -11,6 +11,7 @@ import com.google.gson.Gson;
 import com.schoollocator.model.GooglePlaceNearBySearchResults;
 import com.schoollocator.model.GooglePlacesNearBySearchResponse;
 import com.schoollocator.model.School;
+import com.schoollocator.util.GooglePlacesUrl;
 
 public class GooglePlacesWebclient {
 	public Gson gson;
@@ -22,8 +23,8 @@ public class GooglePlacesWebclient {
 	public List<School> nearBySearch(String keyword,String location, int miles) throws Exception{
 		double radius = (miles * 1609.3);
 		keyword = keyword.replace(" ", "");
-		String geocodeUrl = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?keyword="+keyword+"&type=school&&radius="+radius+"&sensor=false&location="+location+"&key=AIzaSyCPQaOZZ6HRn9z77l5u58VtuaV-Uzcjd-c";
-		URL google = new URL(geocodeUrl);
+		String url = new GooglePlacesUrl.Builder().keyword(keyword).location(location).radius(radius).build().toString();
+		URL google = new URL(url);
 		HttpURLConnection connection = (HttpURLConnection) google.openConnection();
 		connection.setDoOutput(true);
 		Reader reader = new InputStreamReader(connection.getInputStream());

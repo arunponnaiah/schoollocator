@@ -8,6 +8,7 @@ import java.net.URL;
 import com.google.gson.Gson;
 import com.schoollocator.model.GoogleGeocodeResponse;
 import com.schoollocator.model.Location;
+import com.schoollocator.util.GoogleGeocodeUrl;
 
 public class GoogleGeocodeWebclient {
 
@@ -18,9 +19,9 @@ public class GoogleGeocodeWebclient {
 	}
 	
 	public String getPlaceLocation(int zipcode) throws Exception {
-		String geocodeUrl = "http://maps.googleapis.com/maps/api/geocode/json?address="+zipcode+"&sensor=false";
-		URL google = new URL(geocodeUrl);
-		HttpURLConnection connection = (HttpURLConnection) google.openConnection();
+		String geocodeUrl = new GoogleGeocodeUrl.Builder().zipcode(zipcode).build().toString();
+		URL url = new URL(geocodeUrl);
+		HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 		connection.setDoOutput(true);
 		Reader reader = new InputStreamReader(connection.getInputStream());
 		GoogleGeocodeResponse googleGeocodeResponse = this.gson.fromJson(reader, GoogleGeocodeResponse.class);
