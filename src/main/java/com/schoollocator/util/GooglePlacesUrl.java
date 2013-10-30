@@ -6,7 +6,7 @@ public class GooglePlacesUrl {
 	private double radius;
 	
 	private static String googlePlaceBaseUrl
-		="https://maps.googleapis.com/maps/api/place/nearbysearch/json?type=school&sensor=false&key=AIzaSyCPQaOZZ6HRn9z77l5u58VtuaV-Uzcjd-c";
+		="https://maps.googleapis.com/maps/api/place/nearbysearch/json?type=school&sensor=false&key=";
 
 	private GooglePlacesUrl(String keyword,String location,double radius){
 		this.keyword=keyword;
